@@ -1,0 +1,28 @@
+//@import "variables", "mixins";
+@include font($font-url, $base-font, 'Regular', 400);
+@include font($font-url, $base-font, 'Bold', 700);
+
+body {
+  font-family: $base-font, sans-serif;
+  color: $base-text-color;
+  line-height: 1.2;
+  font-size: 1rem; // 14px
+  // rem 단위는 문서의 최상위 요소, 즉 html 요소의 크기의 몇 배인지로 크기를 정합니다
+  font-weight: 400;
+  //transition: 0.3s ease;
+}
+
+.title {
+  font-size: 1.5rem; // 14px * 1.5 = 21px
+}
+.img {
+  width: 100%;
+  height: auto;
+}
+.img-box {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  background-color: darkred;
+  border: 2px solid deepskyblue;
+}

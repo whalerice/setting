@@ -1,0 +1,72 @@
+.quantum {
+  .#{$prefix}-layout {
+    &-sider {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      height: 100vh;
+      overflow-y: auto;
+      z-index: 10;
+      .logo {
+        position: sticky;
+        top: 0;
+        left: 0;
+        z-index: 2;
+      }
+      &-collapsed + .qt-layout.container {
+        // 메뉴 접혔을 때  container
+        padding-left: 8rem;
+      }
+    }
+    &-header {
+      position: sticky;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-right: 1.5rem;
+
+      .qt-btn-icon {
+        > svg {
+          display: inline-block;
+          vertical-align: middle;
+          margin-top: -3px;
+        }
+        // background-color: red;
+        // svg {
+        //   width: 2.4rem;
+        //   height: 2.4rem;
+        // }
+      }
+    }
+
+    &-content {
+      padding: 1.5rem;
+    }
+
+    &.container {
+      min-height: 100vh;
+      padding-left: 20rem;
+    }
+  }
+
+  .qt-menu-light.qt-menu-root.qt-menu-inline,
+  .qt-menu-light.qt-menu-root.qt-menu-vertical {
+    border-inline-end: 0;
+  }
+
+  .btn-collapse {
+    border: 0;
+  }
+}
+
+.user-info-layer {
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  // [class*='avatar'] {}
+}

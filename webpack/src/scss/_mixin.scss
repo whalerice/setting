@@ -1,0 +1,13 @@
+@mixin font-face($url, $family, $thickness, $weight) {
+	@font-face {
+		font-family: $family;
+		src: url("#{$url}#{$family}/#{$family}-#{$thickness}.eot");
+		src: url("#{$url}#{$family}/#{$family}-#{$thickness}.eot?#iefix")
+		format("embedded-opentype"),
+		url("#{$url}#{$family}/#{$family}-#{$thickness}.woff") format("woff"),
+		url("#{$url}#{$family}/#{$family}-#{$thickness}.woff2") format("woff2");
+		font-weight: $weight;
+		font-style: normal;
+	}
+}
+

@@ -1,0 +1,32 @@
+// .#{$prefix}-layout {}
+
+.#{$prefix}-layout-sider-light {
+  background-color: $sider-bg-light;
+}
+.#{$prefix}-layout-sider-dark {
+  background-color: $sider-bg-dark;
+}
+
+.light {
+  &.#{$prefix}-layout {
+    &.container {
+      background-color: $body-bg-light;
+      color: $color-light;
+    }
+  }
+  .#{$prefix}-layout-header {
+    background-color: $header-bg-light;
+  }
+}
+
+.dark {
+  &.#{$prefix}-layout {
+    &.container {
+      background-color: $body-bg-dark;
+      color: $color-dark;
+    }
+  }
+  .#{$prefix}-layout-header {
+    background-color: $header-bg-dark;
+  }
+}
