@@ -1,5 +1,4 @@
-import { QueryClient } from '@tanstack/react-query';
-import { apis } from '@/lib/apis';
+import { QueryCache, QueryClient } from '@tanstack/react-query';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -7,11 +6,16 @@ const queryClient = new QueryClient({
       staleTime: Infinity,
     },
   },
+  queryCache: new QueryCache({
+    onError: (error) => {
+      console.log(error);
+    },
+    onSuccess: (data) => {
+      //   console.log(data);
+    },
+    onSettled: (data, error) => {
+      //   console.log(data, error);
+    },
+  }),
 });
-
-await queryClient.prefetchQuery({
-  queryKey: ['auth'],
-  queryFn: () => apis.auth.authentication(),
-});
-
 export { queryClient };

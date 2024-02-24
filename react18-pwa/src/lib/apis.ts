@@ -62,6 +62,7 @@ const request = {
 export const apis = {
   auth: {
     authentication: () => request.get('/api/authentication'),
+    guest: () => request.get('/api/authentication/guest_session/new'),
   },
   genre: {
     movieList: () => request.get('/api/genre/movie/list?language=ko'),
