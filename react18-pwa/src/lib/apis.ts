@@ -30,10 +30,10 @@ const send = async (options: SendParams) => {
       data,
       params: params,
       headers: {
+        Authorization: `Bearer ${import.meta.env.VITE_TOKEN}`,
         Accept: 'application/json',
         ...(isForm ? { 'Content-Type': 'multipart/form-data' } : {}),
       },
-      withCredentials: true,
     });
 
     if (response.status !== 200) {
@@ -60,8 +60,16 @@ const request = {
 };
 
 export const apis = {
-  app: {
-    setting: () => request.post('/chatApi/app/setting'),
+  auth: {
+    authentication: () => request.get('/api/authentication'),
   },
-  user: {},
+  genre: {
+    movieList: () => request.get('/api/genre/movie/list?language=ko'),
+  },
+  movie: {
+    nowPlaying: () => request.get(`/api/movie/now_playing?language=ko`),
+    popular: () => request.get(`/api/movie/popular?language=ko`),
+    lists: (movieId: number) =>
+      request.get(`/api/movie/${movieId}/lists?language=ko`),
+  },
 };
