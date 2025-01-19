@@ -1,0 +1,35 @@
+html {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.4s;
+}
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+  filter: blur(1rem);
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding-top: env(safe-area-inset-top);
+  background-color: var(--van-nav-bar-background);
+}
+
+.container {
+  padding-bottom: var(--van-tabbar-height);
+}
+
+.login-layout {
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+  background-color: var(--van-nav-bar-background);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
